@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import PopularProducts from "./sections/PopularProducts";
+import SuperQuality from "./sections/SuperQuality";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <PopularProducts />
+      <SuperQuality />
     </main>
   );
 }

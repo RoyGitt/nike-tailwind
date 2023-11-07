@@ -19,7 +19,7 @@ const Hero = () => {
           <span> Discover stylish Nike arrivals, quality</span>
           <span> comfort, and innovation for your active life.</span>
         </h5>
-        <button className="flex items-center gap-4 bg-primary text-[#fff] self-start text-xl rounded-3xl px-7 py-3 ">
+        <button className="button--solid ">
           Shop Now
           <BsFillArrowRightCircleFill />
         </button>

@@ -15,7 +15,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button className="flex items-center gap-3 border-2 font-semibold border-primary text-primary  rounded-3xl px-7 py-2 text-xl 	">
+        <button className="button--transparent">
           Explore Now
           <SiAzuredataexplorer />
         </button>

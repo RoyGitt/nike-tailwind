@@ -4,12 +4,12 @@ import PopularProductsCard from "../components/PopularProductsCard";
 
 const PopularProducts = () => {
   return (
-    <section className="h-screen flex flex-col justify-center gap-16 padding">
-      <h2 className="text-5xl capitalize font-bold">
+    <section className="h-screen flex flex-col justify-center gap-12 padding">
+      <h2 className="heading--primary">
         Our <span className="text-primary font-montserrat">popular</span>{" "}
         Products
       </h2>
-      <p className="flex flex-col texl-xl text-slate-600  tracking-wider leading-normal font-montserrat">
+      <p className="flex flex-col para">
         <span>
           Experience top-notch quality and style with our sought-after
           selections.
