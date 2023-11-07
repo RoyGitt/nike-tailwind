@@ -38,7 +38,7 @@ const Hero = () => {
           </h3>
         </div>
       </div>
-      <div className="basis-[40%]">
+      <div className="basis-[45%]">
         <img src={shoeImg} alt="summer collection shoe" />
         <ul className="flex gap-8 mt-20 ">
           <li
