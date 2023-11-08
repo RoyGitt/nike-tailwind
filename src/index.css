@@ -29,7 +29,7 @@
   }
 
   .para {
-    @apply text-xl text-slate-600  tracking-wider leading-normal font-montserrat;
+    @apply text-lg text-slate-600  tracking-wider leading-normal font-montserrat;
   }
 }
 
