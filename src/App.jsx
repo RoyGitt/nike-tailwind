@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Features from "./sections/Features";
 import Hero from "./sections/Hero";
 import PopularProducts from "./sections/PopularProducts";
+import SpecialOffer from "./sections/SpecialOffer";
 import SuperQuality from "./sections/SuperQuality";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <PopularProducts />
       <SuperQuality />
       <Features />
+      <SpecialOffer />
     </main>
   );
 }
