@@ -17,6 +17,9 @@
     max-width: 1440px;
     margin: 0 auto;
   }
+  .section {
+    @apply h-screen padding flex justify-between items-center;
+  }
   .button--transparent {
     @apply flex items-center gap-3 border-2 font-semibold border-primary text-primary  rounded-3xl px-7 py-2 text-xl;
   }

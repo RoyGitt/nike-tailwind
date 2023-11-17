@@ -4,7 +4,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const SpecialOffer = () => {
   return (
-    <section className="h-screen padding flex justify-between items-center">
+    <section className="section">
       <div className="flex-[0.5]">
         <img src={offer} className="" />
       </div>
