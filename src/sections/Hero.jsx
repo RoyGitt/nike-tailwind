@@ -7,7 +7,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex justify-between items-center mt-14 padding"
+      className="flex justify-between items-center pb-8 pt-28 py-4 px-8"
       id="home"
     >
       <div className="flex flex-col justify-between">
