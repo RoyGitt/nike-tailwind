@@ -9,15 +9,15 @@ const SpecialOffer = () => {
         <img src={offer} className="" />
       </div>
       <div className="flex-[0.45] flex flex-col gap-8">
-        <h1 className="heading--primary">
+        <h1 className="heading--primary dark:text-slate-50">
           <span className="text-primary">Special</span> Offer
         </h1>
-        <p className="para">
+        <p className="para dark:text-slate-300">
           Embark on a shopping journey that redefines your experience with
           unbeatable deals. From premier selections to incredible savings, we
           offer unparalleled value that sets us apart.
         </p>
-        <p className="para">
+        <p className="para dark:text-slate-300">
           Navigate a realm of possibilities designed to fulfill your unique
           desires, surpassing the loftiest expectations. Your journey with us is
           nothing short of exceptional.

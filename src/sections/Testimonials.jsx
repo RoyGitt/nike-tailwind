@@ -5,10 +5,10 @@ import CustomerCard from "../components/CustomerCard";
 const Testimonials = () => {
   return (
     <section className="section flex-col justify-center items-center">
-      <h1 className="heading--primary mb-6">
+      <h1 className="heading--primary mb-6 dark:text-slate-50">
         What Our <span className="text-primary">Customers </span>Say?
       </h1>
-      <p className="para w-[40%] mx-auto text-center mb-24">
+      <p className="para w-[40%] mx-auto text-center mb-24 dark:text-slate-300">
         Hear genuine stories from our satisfied customers about their
         exceptional experiences with us.
       </p>

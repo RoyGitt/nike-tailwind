@@ -11,6 +11,9 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+body {
+  transition: all 0.2s;
+}
 
 @layer components {
   .max-container {

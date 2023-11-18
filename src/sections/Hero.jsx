@@ -6,16 +6,21 @@ const Hero = () => {
   const [shoeImg, setShoeImg] = useState(bigShoe1);
 
   return (
-    <section className="flex justify-between items-center mt-14 padding">
+    <section
+      className="flex justify-between items-center mt-14 padding"
+      id="home"
+    >
       <div className="flex flex-col justify-between">
-        <h4 className="text-2xl text-primary mb-14">Our summer collections</h4>
-        <h1 className="flex flex-col text-8xl font-bold">
+        <h4 className="text-2xl text-primary mb-14 dark:text-slate-50">
+          Our summer collections
+        </h4>
+        <h1 className="flex flex-col text-8xl font-bold dark:text-slate-50">
           <span className="mb-6">The New Arrival</span>
           <span className="mb-6">
             <span className="text-primary ">Nike</span> Shoes
           </span>
         </h1>
-        <h5 className="flex flex-col text-xl text-slate-600  mb-14">
+        <h5 className="flex flex-col text-xl text-slate-600  mb-14 dark:text-slate-300">
           <span> Discover stylish Nike arrivals, quality</span>
           <span> comfort, and innovation for your active life.</span>
         </h5>
@@ -23,7 +28,7 @@ const Hero = () => {
           Shop Now
           <BsFillArrowRightCircleFill />
         </button>
-        <div className="flex gap-20 mt-16">
+        <div className="flex gap-20 mt-16 dark:text-slate-50">
           <h3 className="flex flex-col font-palanquin">
             <span className="text-5xl font-bold">1k+</span>
             <span className="font-montserrat font-2xl mt-2">Brands</span>
