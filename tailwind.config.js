@@ -3,6 +3,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
+    screens: {
+      mobilesm: "320px",
+      mobilemd: "375px",
+      mobilelg: "420px",
+      tablet: "768px",
+      laptop: "1024px",
+      laptoplg: "1440px",
+    },
     extend: {
       fontFamily: {
         palanquin: ["Palanquin", "sans-serif"],

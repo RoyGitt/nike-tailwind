@@ -5,7 +5,7 @@ import PopularProductsCard from "../components/PopularProductsCard";
 const PopularProducts = () => {
   return (
     <section
-      className="h-screen flex flex-col justify-center gap-12 padding "
+      className=" flex flex-col justify-center gap-12 padding h-full laptoplg:h-screen"
       id="products"
     >
       <h2 className="heading--primary dark:text-slate-50">
@@ -19,7 +19,7 @@ const PopularProducts = () => {
         </span>
         <span>Discover a world of comfort, design, and value</span>
       </p>
-      <div className="flex justify-between dark:text-slate-50">
+      <div className="flex tablet:grid tablet:grid-cols-2 laptoplg:flex laptoplg:flex-row justify-between dark:text-slate-50 flex-col gap-10 ">
         {products.map((product) => (
           <PopularProductsCard key={product.imgURL} {...product} />
         ))}

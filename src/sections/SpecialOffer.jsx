@@ -4,7 +4,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const SpecialOffer = () => {
   return (
-    <section className="section">
+    <section className="section flex-col-reverse laptop:flex-row laptop:h-screen">
       <div className="flex-[0.5]">
         <img src={offer} className="" />
       </div>
@@ -22,7 +22,7 @@ const SpecialOffer = () => {
           desires, surpassing the loftiest expectations. Your journey with us is
           nothing short of exceptional.
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 mb-10">
           <button className="button--solid ">
             Shop Now <BsFillArrowRightCircleFill />
           </button>

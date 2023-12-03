@@ -4,10 +4,10 @@ import { footerLogo } from "../assets/images";
 
 const Footer = () => {
   return (
-    <footer className=" bg-black text-white">
-      <div className="flex  py-20 max-container mx-auto justify-between">
+    <footer className=" bg-black text-white px-4 laptop:px-8">
+      <div className="flex  py-20 max-container mx-auto justify-between flex-col gap-10 laptop:flex-row">
         <div className="flex-[0.4] flex flex-col gap-8">
-          <img src={footerLogo} className="w-2/6" />
+          <img src={footerLogo} className="w-2/6 laptop:w-4/6 laptoplg:w-3/6" />
           <p className="para font-lg text-slate-300">
             Get shoes ready for the new term at your nearest Nike store. Find
             Your perfect Size In Store. Get Rewards

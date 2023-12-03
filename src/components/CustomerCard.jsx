@@ -3,9 +3,9 @@ import { star } from "../assets/icons";
 
 const CustomerCard = ({ imgURL, customerName, rating, feedback }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-6">
+    <div className="flex  items-center justify-center gap-6 flex-col-reverse tablet:flex-col">
       <img src={imgURL} className="w-40 h-40 rounded-full" />
-      <p className="para text-center w-[70%] mx-auto dark:text-slate-300">
+      <p className="para text-center  mx-auto dark:text-slate-300 w-full tablet:w-[70%] tablet:mx-auto">
         {feedback}
       </p>
       <div className="flex para gap-3 dark:text-slate-50">

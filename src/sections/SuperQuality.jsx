@@ -3,8 +3,11 @@ import { shoe8 } from "../assets/images";
 
 const SuperQuality = () => {
   return (
-    <section className="section" id="about-us">
-      <div className="flex-[0.8] flex flex-col gap-8">
+    <section
+      className="section flex-col laptop:flex-row laptop:h-screen"
+      id="about-us"
+    >
+      <div className="flex flex-col gap-8 laptop:flex-1">
         <h2 className="heading--primary dark:text-slate-50">
           We Provide You <span className="text-primary">Super Quality</span>{" "}
           Shoes
@@ -17,10 +20,14 @@ const SuperQuality = () => {
         <p className="para dark:text-slate-300">
           Our dedication to detail and excellence ensures your satisfaction
         </p>
-        <button className="button--solid">View details</button>
+        <button className="button--solid mb-8">View details</button>
       </div>
-      <div className="">
-        <img src={shoe8} alt="super quality shoes" className="" />
+      <div className="laptop:flex-1">
+        <img
+          src={shoe8}
+          alt="super quality shoes"
+          className="laptoplg:w-full"
+        />
       </div>
     </section>
   );
