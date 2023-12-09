@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import { offer } from "../assets/images";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { useInView, motion } from "framer-motion";
 
 const SpecialOffer = () => {
+  const sectionVariants = {
+    initial: { x: 300, y: 300, opacity: 0 },
+    fadeInTopRight: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+  const ref = useRef();
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <section className="section flex-col-reverse laptop:flex-row laptop:h-screen">
+    <motion.section
+      variants={sectionVariants}
+      initial="initial"
+      animate={isInView && "fadeInTopRight"}
+      ref={ref}
+      className="section flex-col-reverse laptop:flex-row laptop:h-screen"
+    >
       <div className="flex-[0.5]">
         <img src={offer} className="" />
       </div>
@@ -23,13 +44,23 @@ const SpecialOffer = () => {
           nothing short of exceptional.
         </p>
         <div className="flex gap-4 mb-10">
-          <button className="button--solid ">
+          <motion.button
+            className="button--solid "
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Shop Now <BsFillArrowRightCircleFill />
-          </button>
-          <button className="button--transparent ">Learn More</button>
+          </motion.button>
+          <motion.button
+            className="button--transparent "
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Learn More
+          </motion.button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

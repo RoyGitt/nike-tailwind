@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
 import { SiAzuredataexplorer } from "react-icons/si";
@@ -16,10 +17,12 @@ const Navbar = () => {
 
   const [translucentNav, setTranslucentNav] = useState(false);
 
-  const [navClosed, setNavClosed] = useState(false);
+  const [navClosed, setNavClosed] = useState(true);
 
   const toggleNav = () => {
     setNavClosed((prev) => !prev);
+    console.log("clicked");
+    console.log(navClosed);
   };
 
   const handleScroll = () => {
@@ -42,30 +45,64 @@ const Navbar = () => {
     }
   }, [scrollPosition]);
 
-  console.log(scrollPosition);
-  console.log(translucentNav);
+  const listItemVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    shown: {
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const ref = useRef();
+
+  const { scrollYProgress } = useScroll({
+    offset: ["end end", "start start"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 5,
+  });
 
   return (
-    <header>
+    <header
+      className={`fixed z-50 top-0 left-0 right-0 transition-all ${
+        translucentNav &&
+        "bg-slate-300 bg-opacity-80 py-1 dark:bg-slate-800 dark:bg-opacity-80"
+      }`}
+    >
       <nav
-        className={`flex justify-between items-center  py-4 font-montserrat fixed top-0 left-0 right-0 max-w-[1440px] mx-auto transition-all duration-300 px-8 ${
-          translucentNav &&
-          "bg-slate-300 bg-opacity-80 py-2 dark:bg-slate-800 dark:bg-opacity-80"
-        }`}
+        ref={ref}
+        className={`flex relative justify-between items-center py-5 px-4 font-montserrat  max-w-[1440px]  mx-auto transition-all duration-300 `}
       >
-        <img
+        {translucentNav && (
+          <motion.div
+            style={{ scaleX }}
+            className="absolute bottom-0 left-0 w-full bg-primary z-40 h-1 shadow-2xl shadow-primary"
+          ></motion.div>
+        )}
+
+        <motion.img
           src={headerLogo}
           alt="logo"
-          className="mobilelg:w-[20%] w-[40%] laptop:w-[15%] laptoplg:w-[10%]"
+          className="mobilelg:w-[25%] w-[30%] laptop:w-[15%] laptoplg:w-[10%]"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring" }}
         />
         <div className="laptop:hidden">
           <HiMenuAlt3 className="text-3xl text-primary" onClick={toggleNav} />
         </div>
-
         <div
           className={`fixed laptop:hidden top-0 right-0 w-[70%] ${
             navClosed ? "translate-x-[100%]" : "translate-x-[0%]"
-          } h-screen transition-all bg-slate-200 shadow-lg px-6 py-16 flex flex-col justify-center items-center dark:bg-slate-800`}
+          } h-screen transition-all bg-slate-200 shadow-lg px-6 py-16 flex flex-col justify-center items-center dark:bg-slate-800 z-50`}
         >
           <ul className=" text-right flex flex-col gap-8 text-xl font-semibold align-center justify-start text-slate-600 ">
             {navLinks.map((link) => (
@@ -88,16 +125,17 @@ const Navbar = () => {
               <SiAzuredataexplorer />
             </button>
             <div className="flex justify-around">
-              <button
+              <motion.button
                 className=" rounded-full w-[3rem] h-[3rem] flex justify-center items-center bg-primary"
                 onClick={toggleDarkMode}
+                whileTap={{ scale: 0.95 }}
               >
                 {isDarkMode ? (
                   <MdOutlineLightMode className="text-white text-3xl" />
                 ) : (
                   <MdOutlineNightlight className="text-white text-3xl" />
                 )}
-              </button>
+              </motion.button>
               <button
                 className="rounded-full w-[3rem] h-[3rem] flex justify-center items-center bg-primary"
                 onClick={toggleNav}
@@ -107,37 +145,49 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
-        <ul
-          className={` gap-9 text-xl text-slate-600 dark:text-slate-50 hidden laptop:flex laptop:text-sm laptoplg:text-lg ${
-            translucentNav && "font-semibold"
+        <motion.ul
+          variants={listItemVariants}
+          initial="hidden"
+          animate="shown"
+          className={` gap-9 text-xl text-slate-600 font-medium dark:text-slate-50 hidden laptop:flex laptop:text-sm laptoplg:text-lg ${
+            translucentNav && "font-medium"
           }`}
         >
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <motion.li
+              key={link.href}
+              variants={listItemVariants}
+              whileHover={{
+                textShadow: "5px 5px 7px #ff6454",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
               <a href={link.href}> {link.label}</a>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
         <div className=" gap-20 laptop:flex hidden">
-          <button
-            className={`flex gap-4 items-center text-slate-950 text-xl dark:text-slate-50  ${
-              translucentNav && "font-semibold"
-            }`}
-          >
-            Explore Now
-            <SiAzuredataexplorer />
-          </button>
-          <button
-            className=" rounded-full w-[3rem] h-[3rem] flex justify-center items-center dark:border-slate-50"
+          <motion.button
+            className=" rounded-full  flex justify-center items-center dark:border-slate-50 "
             onClick={toggleDarkMode}
+            whileTap={{ scale: 0.95 }}
           >
             {isDarkMode ? (
-              <MdOutlineLightMode className="text-slate-800 dark:text-slate-50 text-3xl" />
+              <motion.span>
+                <MdOutlineLightMode className="text-slate-800 w-[2rem] h-[2rem] dark:text-slate-50 text-3xl" />
+              </motion.span>
             ) : (
-              <MdOutlineNightlight className="text-slate-800 dark:text-slate-50 text-3xl" />
+              <>
+                <motion.span
+                  initial={{ scale: 1.5, rotate: "0deg" }}
+                  animate={{ scale: 1, rotate: "360deg" }}
+                  transition={{ duration: 1, delay: 1 }}
+                >
+                  <MdOutlineNightlight className="text-slate-800 w-[2rem] h-[2rem] dark:text-slate-50 text-3xl" />
+                </motion.span>
+              </>
             )}
-          </button>
+          </motion.button>
         </div>
       </nav>
     </header>

@@ -13,15 +13,23 @@
 }
 body {
   transition: all 0.2s;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  text-transform: capitalize;
+  font-family: inherit;
 }
 
 @layer components {
   .max-container {
-    max-width: 1440px;
-    margin: 0 auto;
   }
   .section {
-    @apply padding flex justify-between items-center;
+    @apply max-w-[1440px] mx-auto padding flex justify-between items-center;
   }
   .button--transparent {
     @apply flex items-center gap-3 border-2 font-semibold border-primary text-primary rounded-3xl py-3 px-4  text-base laptoplg:text-xl;
@@ -41,6 +49,6 @@ body {
 
 @layer utilities {
   .padding {
-    @apply px-4 py-10 laptop:px-8 laptop:py-16;
+    @apply px-4 py-16 laptop:px-8 laptop:py-16;
   }
 }

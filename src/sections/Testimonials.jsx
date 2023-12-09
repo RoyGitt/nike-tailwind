@@ -5,7 +5,7 @@ import CustomerCard from "../components/CustomerCard";
 const Testimonials = () => {
   return (
     <section className="section flex-col justify-center items-center laptop:h-screen">
-      <h1 className="heading--primary mb-6 dark:text-slate-50">
+      <h1 className="heading--primary mb-6 dark:text-slate-50 text-center">
         What Our <span className="text-primary">Customers </span>Say?
       </h1>
       <p className="para mx-auto text-center tablet:w-[40%] tablet:mx-auto dark:text-slate-300 w-fulltext-left mb-8">

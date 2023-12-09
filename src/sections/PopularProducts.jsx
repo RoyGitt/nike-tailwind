@@ -3,9 +3,11 @@ import { products } from "../constants";
 import PopularProductsCard from "../components/PopularProductsCard";
 
 const PopularProducts = () => {
+
+
   return (
     <section
-      className=" flex flex-col justify-center gap-12 padding h-full laptoplg:h-screen"
+      className="max-w-[1440px] mx-auto flex flex-col justify-center gap-12 padding laptoplg:h-screen"
       id="products"
     >
       <h2 className="heading--primary dark:text-slate-50">

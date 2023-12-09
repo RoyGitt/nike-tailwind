@@ -1,9 +1,22 @@
 import React from "react";
 import { star } from "../assets/icons";
+import { motion } from "framer-motion";
 
 const PopularProductsCard = ({ imgURL, name, price }) => {
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    fadeUp: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
-    <div className="flex flex-col gap-2">
+    <motion.div
+      className="flex flex-col gap-2"
+      variants={cardVariants}
+      initial="initial"
+      whileInView="fadeUp"
+    >
       <img src={imgURL} alt={name} className="mb-5" />
       <div className="flex items-cente gap-4">
         <img src={star} />
@@ -13,7 +26,7 @@ const PopularProductsCard = ({ imgURL, name, price }) => {
       <h4 className="text-2xl font-palanquin font-semibold text-primary">
         {price}
       </h4>
-    </div>
+    </motion.div>
   );
 };
 
